@@ -35,3 +35,27 @@ topBtn.onclick=function(){
     });
 
 };
+// Contact Form Validation
+
+const form = document.getElementById("contactForm");
+
+form.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    const name = form.querySelector('input[type="text"]').value.trim();
+
+    const email = form.querySelector('input[type="email"]').value.trim();
+
+    const message = form.querySelector("textarea").value.trim();
+
+    if(name==="" || email==="" || message===""){
+        alert("Please fill all fields.");
+        return;
+    }
+
+    alert("Message Sent Successfully!");
+
+    form.reset();
+
+});
