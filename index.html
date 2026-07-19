@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
 </head>
 <body>
 
@@ -25,7 +26,7 @@
     </nav>
     <button id="darkModeBtn">🌙 Dark Mode</button>
 
-    <section id="about">
+    <section id="about" data-aos="fade-up">
         <h2>About Me</h2>
         <p>
             Hello! I am Smita Powar, a BCA student passionate about web development,
@@ -34,7 +35,7 @@
         </p>
     </section>
 
-    <section id="skills">
+    <section id="skills" data-aos="fade-right">
     <h2>My Skills</h2>
 
     <div class="skills-container">
@@ -75,7 +76,7 @@
 
     
 
-    <section id="projects">
+    <section id="skills" data-aos="fade-right">
     <h2>My Projects</h2>
 
     <div class="project-card">
@@ -108,15 +109,15 @@
 
     </section>
 
-    <section id="education">
+    <section id="education" data-aos="fade-left">
         <h2>Education</h2>
         <p>Bachelor of Computer Applications (BCA)</p>
     </section>
 
-    <section id="contact">
+    <section id="contact" data-aos="fade-up">
     <h2>Contact Me</h2>
 
-    <form>
+    <form id="contactForm">
         <input type="text" placeholder="Your Name" required>
 
         <input type="email" placeholder="Your Email" required>
@@ -150,6 +151,14 @@
 
     <script src="script.js"></script>
     <button id="topBtn">⬆</button>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+AOS.init({
+    duration:1000,
+    once:true
+});
+</script>
 
 </body>
           </html>
