@@ -230,3 +230,156 @@ footer {
         padding: 60px 20px;
     }
 }
+/* AI BACKGROUND */
+
+body {
+    overflow-x: hidden;
+    background:
+        radial-gradient(circle at 20% 20%, #1677ff22, transparent 30%),
+        radial-gradient(circle at 80% 80%, #8b5cf622, transparent 30%),
+        #f5f9ff;
+}
+
+.hero {
+    position: relative;
+}
+
+.hero h1 {
+    background: linear-gradient(90deg, #1677ff, #8b5cf6, #00c6ff);
+    background-size: 300%;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: gradient 5s infinite;
+}
+
+@keyframes gradient {
+    0% { background-position: 0%; }
+    50% { background-position: 100%; }
+    100% { background-position: 0%; }
+}
+
+
+/* GLOWING PROFILE */
+
+.profile {
+    position: relative;
+}
+
+.profile::before {
+    content: "";
+    position: absolute;
+    inset: -15px;
+    border-radius: 50%;
+    border: 3px solid #1677ff;
+    animation: rotate 4s linear infinite;
+    box-shadow: 0 0 30px #1677ff;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+
+/* CARD 3D EFFECT */
+
+.card {
+    position: relative;
+    overflow: hidden;
+    transition: 0.4s;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: #1677ff44;
+    border-radius: 50%;
+    top: -60px;
+    right: -60px;
+    filter: blur(20px);
+}
+
+.card:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 15px 40px #1677ff44;
+}
+
+
+/* SCROLL ANIMATION */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 0.8s;
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* CURSOR GLOW */
+
+.cursor-glow {
+    position: fixed;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    pointer-events: none;
+    background: radial-gradient(circle, #1677ff22, transparent 70%);
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+
+/* AI BUTTON */
+
+.ai-button {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1677ff, #8b5cf6);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    cursor: pointer;
+    box-shadow: 0 0 25px #1677ff88;
+    animation: aiFloat 2s infinite;
+    z-index: 1000;
+}
+
+@keyframes aiFloat {
+    0%,100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+/* TYPING */
+
+#typing {
+    color: #8b5cf6;
+    border-right: 3px solid #1677ff;
+    padding-right: 5px;
+}
+
+
+/* DARK MODE */
+
+.dark {
+    background:
+        radial-gradient(circle at 20% 20%, #1677ff22, transparent 30%),
+        radial-gradient(circle at 80% 80%, #8b5cf622, transparent 30%),
+        #080d18;
+}
