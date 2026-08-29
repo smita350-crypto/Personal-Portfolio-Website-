@@ -1,7 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Smita AI Assistant</title>
+
     <link rel="stylesheet" href="chatbot.css">
 </head>
 
@@ -9,26 +14,79 @@
 
 <div class="chat-box">
 
+    <!-- HEADER -->
     <div class="chat-header">
-        🤖 Smita AI Assistant
-        <button onclick="closeChat()">×</button>
-    </div>
 
-    <div id="messages">
-        <div class="bot">
-            👋 Hi! I'm Smita's AI Assistant.
-            <br><br>
-            Ask me about her skills, projects,
-            education or GitHub.
+        <div>
+            <strong>🤖 Smita AI</strong>
+            <small>● Online</small>
         </div>
+
+        <button onclick="closeChat()">×</button>
+
     </div>
 
+
+    <!-- MESSAGES -->
+    <div id="messages">
+
+        <div class="bot message">
+            👋 Hi! I'm <b>Smita's AI Assistant</b>.
+            <br><br>
+            I can tell you about Smita's:
+            <br>
+            💻 Skills
+            <br>
+            🚀 Projects
+            <br>
+            🎓 Education
+            <br>
+            🔗 GitHub
+            <br>
+            📧 Contact
+        </div>
+
+    </div>
+
+
+    <!-- QUICK QUESTIONS -->
+    <div class="quick-buttons">
+
+        <button onclick="quickMessage('skills')">
+            💻 Skills
+        </button>
+
+        <button onclick="quickMessage('projects')">
+            🚀 Projects
+        </button>
+
+        <button onclick="quickMessage('education')">
+            🎓 Education
+        </button>
+
+        <button onclick="quickMessage('github')">
+            🔗 GitHub
+        </button>
+
+    </div>
+
+
+    <!-- INPUT -->
     <div class="input-box">
-        <input id="input" placeholder="Ask me something...">
-        <button onclick="send()">➤</button>
+
+        <input
+            id="input"
+            type="text"
+            placeholder="Ask me something..."
+            onkeydown="if(event.key==='Enter') sendMessage()"
+        >
+
+        <button onclick="sendMessage()">➤</button>
+
     </div>
 
 </div>
+
 
 <script src="chatbot.js"></script>
 
