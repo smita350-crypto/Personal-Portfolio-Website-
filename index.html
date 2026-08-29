@@ -8,8 +8,9 @@
 </head>
 
 <body>
-<div class="particles"></div>
+
 <div class="cursor-glow"></div>
+
 <header>
     <nav>
         <h2>Smita.</h2>
@@ -27,19 +28,23 @@
     </nav>
 </header>
 
+
 <!-- HOME -->
+
 <section id="home" class="hero">
 
     <div class="hero-text">
         <p>Hello, I'm</p>
+
         <h1>Smita Powar</h1>
+
         <h2>
-    I'm a <span id="typing"></span>
-</h2>
+            I'm a <span id="typing"></span>
+        </h2>
 
         <p>
-            I love creating beautiful, simple and user-friendly websites
-            using modern web technologies.
+            I love creating beautiful, simple and user-friendly
+            websites using modern web technologies.
         </p>
 
         <a href="#projects" class="btn">View My Work</a>
@@ -53,56 +58,57 @@
 
 
 <!-- ABOUT -->
+
 <section id="about">
     <h2 class="title">About Me</h2>
 
-    <div class="about-box">
+    <div class="about-box reveal">
         <p>
-            I am a BCA student interested in Web Development, UI/UX
-            Design and Technology. I enjoy learning new programming
-            skills and creating creative projects.
+            I am a BCA student interested in Web Development,
+            UI/UX Design and Technology.
         </p>
 
         <p>
-            My goal is to build useful and attractive websites while
-            continuously improving my technical skills.
+            I enjoy learning programming and creating creative
+            and useful projects.
         </p>
     </div>
 </section>
 
 
 <!-- SKILLS -->
+
 <section id="skills">
     <h2 class="title">My Skills</h2>
 
     <div class="cards">
 
-      <div class="card project reveal">
+        <div class="card reveal">
             <h3>🌐 HTML</h3>
             <p>Creating structured web pages.</p>
         </div>
 
-      <div class="card project reveal">
+        <div class="card reveal">
             <h3>🎨 CSS</h3>
-            <p>Designing attractive and responsive websites.</p>
+            <p>Creating attractive responsive designs.</p>
         </div>
 
-       <div class="card project reveal">
+        <div class="card reveal">
             <h3>⚡ JavaScript</h3>
-            <p>Adding interactive features to websites.</p>
+            <p>Adding interactive features.</p>
         </div>
 
-        <div class="card project reveal">
+        <div class="card reveal">
             <h3>🐘 PHP</h3>
             <p>Building dynamic web applications.</p>
         </div>
 
-       <div class="card project reveal">
+        <div class="card reveal">
             <h3>🐍 Python</h3>
             <p>Programming and application development.</p>
         </div>
 
-       <div class="card project reveal">
+        <div class="card reveal">
             <h3>📊 R Programming</h3>
             <p>Data analysis and visualization.</p>
         </div>
@@ -112,33 +118,34 @@
 
 
 <!-- PROJECTS -->
+
 <section id="projects">
     <h2 class="title">My Projects</h2>
 
     <div class="cards">
 
-        <div class="card project">
+        <div class="card project reveal">
             <h3>💼 Personal Portfolio</h3>
             <p>
-                A responsive portfolio website to showcase my
+                A modern portfolio website to showcase my
                 skills, education and projects.
             </p>
             <span>HTML • CSS • JavaScript</span>
         </div>
 
-        <div class="card project">
+        <div class="card project reveal">
             <h3>🎮 Hangman Game</h3>
             <p>
-                A simple interactive Hangman game created using Python.
+                An interactive Hangman game created using Python.
             </p>
             <span>Python</span>
         </div>
 
-        <div class="card project">
+        <div class="card project reveal">
             <h3>📚 BCA Study Hub</h3>
             <p>
-                A study website containing notes, programs,
-                question papers and useful resources.
+                A study website containing notes, programs
+                and question papers.
             </p>
             <span>HTML • CSS • JavaScript</span>
         </div>
@@ -148,29 +155,38 @@
 
 
 <!-- EDUCATION -->
+
 <section id="education">
     <h2 class="title">Education</h2>
 
-    <div class="education-box">
+    <div class="education-box reveal">
         <h3>🎓 Bachelor of Computer Applications (BCA)</h3>
         <p>Currently pursuing BCA</p>
-        <p>Interested in Web Development & Technology</p>
+        <p>Interested in Web Development & UI/UX</p>
     </div>
 </section>
 
 
 <!-- CONTACT -->
+
 <section id="contact">
     <h2 class="title">Contact Me</h2>
 
-    <div class="contact-box">
+    <div class="contact-box reveal">
 
-        <p>📧 Email: smitapowar678@gmail.com</p>
+        <!-- YOUR EMAIL -->
+        <p>
+            📧 Email:
+            <a href="mailto:your-email@gmail.com">
+                your-email@gmail.com
+            </a>
+        </p>
 
+        <!-- YOUR GITHUB -->
         <p>
             🔗 GitHub:
             <a href="https://github.com/smita350-crypto" target="_blank">
-                My GitHub
+                smita350-crypto
             </a>
         </p>
 
@@ -184,7 +200,48 @@
     <p>© 2026 Smita Powar | Made with ❤️</p>
 </footer>
 
+
+<!-- 🤖 CHATBOT -->
+
+<div class="chatbot">
+
+    <div class="chat-header">
+        🤖 Smita AI Assistant
+        <button onclick="closeChat()">×</button>
+    </div>
+
+    <div id="chatMessages" class="chat-messages">
+
+        <div class="bot-message">
+            👋 Hi! I'm Smita's Portfolio Assistant.
+            <br><br>
+            Ask me about her skills, projects or education!
+        </div>
+
+    </div>
+
+    <div class="chat-input">
+        <input
+            type="text"
+            id="userInput"
+            placeholder="Ask something..."
+            onkeydown="if(event.key==='Enter') sendMessage()"
+        >
+
+        <button onclick="sendMessage()">➤</button>
+    </div>
+
+</div>
+
+
+<!-- CHATBOT BUTTON -->
+
+<button class="ai-button" onclick="openChat()">
+    🤖
+</button>
+
+
 <script src="script.js"></script>
-<div class="ai-button" onclick="aiMessage()">🤖</div>
+
 </body>
 </html>
