@@ -16,6 +16,7 @@ function typeEffect() {
     let word = words[i];
 
     if (!deleting) {
+
         document.getElementById("typing").textContent =
             word.substring(0, j++);
 
@@ -24,7 +25,9 @@ function typeEffect() {
             setTimeout(typeEffect, 1000);
             return;
         }
+
     } else {
+
         document.getElementById("typing").textContent =
             word.substring(0, j--);
 
@@ -40,7 +43,7 @@ function typeEffect() {
 typeEffect();
 
 
-// SCROLL REVEAL
+// SCROLL ANIMATION
 
 const reveals = document.querySelectorAll(".reveal");
 
@@ -65,7 +68,7 @@ reveal();
 
 const glow = document.querySelector(".cursor-glow");
 
-document.addEventListener("mousemove", e => {
+document.addEventListener("mousemove", function(e) {
 
     glow.style.left = e.clientX + "px";
     glow.style.top = e.clientY + "px";
@@ -77,7 +80,7 @@ document.addEventListener("mousemove", e => {
 
 const theme = document.getElementById("theme");
 
-theme.onclick = function () {
+theme.onclick = function() {
 
     document.body.classList.toggle("dark");
 
@@ -88,15 +91,171 @@ theme.onclick = function () {
 };
 
 
-// AI BUTTON
+// OPEN CHATBOT
 
-function aiMessage() {
+function openChat() {
 
-    alert(
-        "🤖 Hi! I'm Smita's AI Portfolio Assistant!\n\n" +
-        "✨ Explore her Skills\n" +
-        "🚀 Check her Projects\n" +
-        "📚 Learn about her Education"
-    );
+    document.querySelector(".chatbot").style.display = "block";
 
+}
+
+
+// CLOSE CHATBOT
+
+function closeChat() {
+
+    document.querySelector(".chatbot").style.display = "none";
+
+}
+
+
+// CHATBOT
+
+function sendMessage() {
+
+    let input = document.getElementById("userInput");
+    let message = input.value.trim();
+
+    if (message === "") return;
+
+    let chat = document.getElementById("chatMessages");
+
+    // USER MESSAGE
+
+    chat.innerHTML += `
+        <div class="user-message">
+            ${message}
+        </div>
+    `;
+
+    input.value = "";
+
+    // BOT RESPONSE
+
+    let reply = getReply(message.toLowerCase());
+
+    setTimeout(function() {
+
+        chat.innerHTML += `
+            <div class="bot-message">
+                ${reply}
+            </div>
+        `;
+
+        chat.scrollTop = chat.scrollHeight;
+
+    }, 500);
+}
+
+
+// BOT ANSWERS
+
+function getReply(message) {
+
+    if (
+        message.includes("skill") ||
+        message.includes("skills")
+    ) {
+
+        return `
+            💻 Smita's Skills:<br>
+            🌐 HTML<br>
+            🎨 CSS<br>
+            ⚡ JavaScript<br>
+            🐘 PHP<br>
+            🐍 Python<br>
+            📊 R Programming
+        `;
+
+    }
+
+    if (
+        message.includes("project") ||
+        message.includes("projects")
+    ) {
+
+        return `
+            🚀 Smita's Projects:<br>
+            💼 Personal Portfolio<br>
+            🎮 Hangman Game<br>
+            📚 BCA Study Hub
+        `;
+
+    }
+
+    if (
+        message.includes("education") ||
+        message.includes("study") ||
+        message.includes("bca")
+    ) {
+
+        return `
+            🎓 Smita is currently pursuing
+            Bachelor of Computer Applications (BCA).
+        `;
+
+    }
+
+    if (
+        message.includes("github") ||
+        message.includes("code")
+    ) {
+
+        return `
+            🔗 You can visit Smita's GitHub here:<br>
+            <a href="https://github.com/smita350-crypto"
+            target="_blank">
+            github.com/smita350-crypto
+            </a>
+        `;
+
+    }
+
+    if (
+        message.includes("contact") ||
+        message.includes("email")
+    ) {
+
+        return `
+            📧 You can contact Smita through
+            the email shown in the Contact section.
+        `;
+
+    }
+
+    if (
+        message.includes("hello") ||
+        message.includes("hi") ||
+        message.includes("hey")
+    ) {
+
+        return `
+            👋 Hello! How can I help you?
+            <br><br>
+            Try asking:
+            <br>
+            • What are her skills?
+            <br>
+            • What projects has she made?
+            <br>
+            • Tell me about her education.
+        `;
+
+    }
+
+    return `
+        🤖 I'm still learning!
+        <br><br>
+        Try asking about:
+        <br>
+        💻 Skills
+        <br>
+        🚀 Projects
+        <br>
+        🎓 Education
+        <br>
+        🔗 GitHub
+        <br>
+        📧 Contact
+    `;
 }
