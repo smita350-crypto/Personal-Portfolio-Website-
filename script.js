@@ -33,3 +33,48 @@ cards.forEach(card => {
     });
 
 });
+const words = [
+    "Web Developer",
+    "UI/UX Designer",
+    "Python Programmer",
+    "Future Software Developer"
+];
+
+let wordIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+function typeEffect() {
+
+    const typing = document.getElementById("typing");
+
+    if (!typing) return;
+
+    const word = words[wordIndex];
+
+    if (!deleting) {
+        typing.textContent = word.substring(0, charIndex);
+        charIndex++;
+
+        if (charIndex > word.length) {
+            deleting = true;
+            setTimeout(typeEffect, 1200);
+            return;
+        }
+
+    } else {
+
+        typing.textContent = word.substring(0, charIndex);
+        charIndex--;
+
+        if (charIndex < 0) {
+            deleting = false;
+            wordIndex = (wordIndex + 1) % words.length;
+            charIndex = 0;
+        }
+    }
+
+    setTimeout(typeEffect, deleting ? 60 : 100);
+}
+
+typeEffect();
