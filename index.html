@@ -4,161 +4,184 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smita Powar | Portfolio</title>
-
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
 </head>
+
 <body>
 
-    <header>
-        <h1>Smita Powar</h1>
-        <p>BCA Student | Future Software Developer</p>
-    </header>
-
+<header>
     <nav>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#education">Education</a>
-        <a href="#contact">Contact</a>
+        <h2>Smita.</h2>
+
+        <div class="links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#education">Education</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <button id="theme">🌙</button>
     </nav>
-    <button id="darkModeBtn">🌙 Dark Mode</button>
+</header>
 
-    <section id="about" data-aos="fade-up">
-        <h2>About Me</h2>
+<!-- HOME -->
+<section id="home" class="hero">
+
+    <div class="hero-text">
+        <p>Hello, I'm</p>
+        <h1>Smita Powar</h1>
+        <h2>BCA Student & Web Developer</h2>
+
         <p>
-            Hello! I am Smita Powar, a BCA student passionate about web development,
-            programming, and learning new technologies. My goal is to become a
-            Software Developer.
+            I love creating beautiful, simple and user-friendly websites
+            using modern web technologies.
         </p>
-    </section>
 
-    <section id="skills" data-aos="fade-right">
-    <h2>My Skills</h2>
-
-    <div class="skills-container">
-
-        <div class="skill-card">
-            <i class="fab fa-html5"></i>
-            <h3>HTML5</h3>
-        </div>
-
-        <div class="skill-card">
-            <i class="fab fa-css3-alt"></i>
-            <h3>CSS3</h3>
-        </div>
-
-        <div class="skill-card">
-            <i class="fab fa-js"></i>
-            <h3>JavaScript</h3>
-        </div>
-
-        <div class="skill-card">
-            <i class="fab fa-java"></i>
-            <h3>Java</h3>
-        </div>
-
-        <div class="skill-card">
-            <i class="fab fa-python"></i>
-            <h3>Python</h3>
-        </div>
-
-        <div class="skill-card">
-            <i class="fab fa-github"></i>
-            <h3>GitHub</h3>
-        </div>
-
+        <a href="#projects" class="btn">View My Work</a>
     </div>
-    </section>
-    
 
-    
+    <div class="profile">
+        <img src="IMG_20260511_174621.jpg" alt="Smita">
+    </div>
 
-    <section id="skills" data-aos="fade-right">
-    <h2>My Projects</h2>
+</section>
 
-    <div class="project-card">
-        <h3>BCA College Website</h3>
+
+<!-- ABOUT -->
+<section id="about">
+    <h2 class="title">About Me</h2>
+
+    <div class="about-box">
         <p>
-            A responsive college website created using HTML, CSS and JavaScript.
+            I am a BCA student interested in Web Development, UI/UX
+            Design and Technology. I enjoy learning new programming
+            skills and creating creative projects.
+        </p>
+
+        <p>
+            My goal is to build useful and attractive websites while
+            continuously improving my technical skills.
         </p>
     </div>
+</section>
 
-    <div class="project-card">
-        <h3>Personal Portfolio Website</h3>
+
+<!-- SKILLS -->
+<section id="skills">
+    <h2 class="title">My Skills</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>🌐 HTML</h3>
+            <p>Creating structured web pages.</p>
+        </div>
+
+        <div class="card">
+            <h3>🎨 CSS</h3>
+            <p>Designing attractive and responsive websites.</p>
+        </div>
+
+        <div class="card">
+            <h3>⚡ JavaScript</h3>
+            <p>Adding interactive features to websites.</p>
+        </div>
+
+        <div class="card">
+            <h3>🐘 PHP</h3>
+            <p>Building dynamic web applications.</p>
+        </div>
+
+        <div class="card">
+            <h3>🐍 Python</h3>
+            <p>Programming and application development.</p>
+        </div>
+
+        <div class="card">
+            <h3>📊 R Programming</h3>
+            <p>Data analysis and visualization.</p>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- PROJECTS -->
+<section id="projects">
+    <h2 class="title">My Projects</h2>
+
+    <div class="cards">
+
+        <div class="card project">
+            <h3>💼 Personal Portfolio</h3>
+            <p>
+                A responsive portfolio website to showcase my
+                skills, education and projects.
+            </p>
+            <span>HTML • CSS • JavaScript</span>
+        </div>
+
+        <div class="card project">
+            <h3>🎮 Hangman Game</h3>
+            <p>
+                A simple interactive Hangman game created using Python.
+            </p>
+            <span>Python</span>
+        </div>
+
+        <div class="card project">
+            <h3>📚 BCA Study Hub</h3>
+            <p>
+                A study website containing notes, programs,
+                question papers and useful resources.
+            </p>
+            <span>HTML • CSS • JavaScript</span>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- EDUCATION -->
+<section id="education">
+    <h2 class="title">Education</h2>
+
+    <div class="education-box">
+        <h3>🎓 Bachelor of Computer Applications (BCA)</h3>
+        <p>Currently pursuing BCA</p>
+        <p>Interested in Web Development & Technology</p>
+    </div>
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact">
+    <h2 class="title">Contact Me</h2>
+
+    <div class="contact-box">
+
+        <p>📧 Email: your-email@gmail.com</p>
+
         <p>
-            A professional portfolio website to showcase my skills and projects.
+            🔗 GitHub:
+            <a href="https://github.com/" target="_blank">
+                My GitHub
+            </a>
         </p>
-    </div>
 
-    <div class="project-card">
-        <h3>Student Management System</h3>
-        <p>
-            A system to manage student records using Java and MySQL.
-        </p>
-    </div>
-
-    <div class="project-card">
-        <h3>Library Management System</h3>
-        <p>
-            A library management application developed using Java and MySQL.
-        </p>
-    </div>
-
-    </section>
-
-    <section id="education" data-aos="fade-left">
-        <h2>Education</h2>
-        <p>Bachelor of Computer Applications (BCA)</p>
-    </section>
-
-    <section id="contact" data-aos="fade-up">
-    <h2>Contact Me</h2>
-
-    <form id="contactForm">
-        <input type="text" placeholder="Your Name" required>
-
-        <input type="email" placeholder="Your Email" required>
-
-        <textarea rows="5" placeholder="Your Message"></textarea>
-
-        <button type="submit">Send Message</button>
-    </form>
-
-    <div class="social-icons">
-
-        <a href="https://github.com/yourusername" target="_blank">
-            <i class="fab fa-github"></i>
-        </a>
-
-        <a href="https://linkedin.com/in/yourusername" target="_blank">
-            <i class="fab fa-linkedin"></i>
-        </a>
-
-        <a href="mailto:smitapowar678@gmail.com">
-            <i class="fas fa-envelope"></i>
-        </a>
+        <p>📍 India</p>
 
     </div>
+</section>
 
-    </section>
 
-    <footer>
-        <p>© 2026 Smita Powar. All Rights Reserved.</p>
-    </footer>
+<footer>
+    <p>© 2026 Smita Powar | Made with ❤️</p>
+</footer>
 
-    <script src="script.js"></script>
-    <button id="topBtn">⬆</button>
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-
-<script>
-AOS.init({
-    duration:1000,
-    once:true
-});
-</script>
+<script src="script.js"></script>
 
 </body>
-          </html>
+</html>
