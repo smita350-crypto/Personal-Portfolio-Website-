@@ -1,83 +1,94 @@
-* {
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="en">
 
-body {
-    margin: 0;
-    font-family: Arial;
-    background: transparent;
-}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-.chat-box {
-    width: 350px;
-    height: 500px;
-    background: #07101f;
-    border: 1px solid #00c6ff;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 0 30px #00c6ff88;
-    color: white;
-}
+    <title>Smita AI Assistant</title>
 
-.chat-header {
-    padding: 18px;
-    background: linear-gradient(135deg,#1677ff,#8b5cf6);
-    display: flex;
-    justify-content: space-between;
-    font-weight: bold;
-}
+    <link rel="stylesheet" href="chatbot.css">
+</head>
 
-.chat-header button {
-    background: none;
-    border: 0;
-    color: white;
-    font-size: 22px;
-    cursor: pointer;
-}
+<body>
 
-#messages {
-    height: 390px;
-    padding: 15px;
-    overflow-y: auto;
-}
+<div class="chat-box">
 
-.bot,
-.user {
-    padding: 10px 14px;
-    margin: 10px 0;
-    border-radius: 15px;
-    max-width: 85%;
-}
+    <!-- HEADER -->
+    <div class="chat-header">
 
-.bot {
-    background: #ffffff12;
-}
+        <div>
+            <strong>🤖 Smita AI</strong>
+            <small>● Online</small>
+        </div>
 
-.user {
-    background: linear-gradient(135deg,#1677ff,#8b5cf6);
-    margin-left: auto;
-}
+        <button onclick="closeChat()">×</button>
 
-.input-box {
-    display: flex;
-    padding: 10px;
-    border-top: 1px solid #ffffff22;
-}
+    </div>
 
-.input-box input {
-    flex: 1;
-    padding: 12px;
-    border: 0;
-    outline: none;
-    border-radius: 20px;
-}
 
-.input-box button {
-    margin-left: 8px;
-    width: 45px;
-    border: 0;
-    border-radius: 50%;
-    background: #1677ff;
-    color: white;
-    cursor: pointer;
-}
+    <!-- MESSAGES -->
+    <div id="messages">
+
+        <div class="bot message">
+            👋 Hi! I'm <b>Smita's AI Assistant</b>.
+            <br><br>
+            I can tell you about Smita's:
+            <br>
+            💻 Skills
+            <br>
+            🚀 Projects
+            <br>
+            🎓 Education
+            <br>
+            🔗 GitHub
+            <br>
+            📧 Contact
+        </div>
+
+    </div>
+
+
+    <!-- QUICK QUESTIONS -->
+    <div class="quick-buttons">
+
+        <button onclick="quickMessage('skills')">
+            💻 Skills
+        </button>
+
+        <button onclick="quickMessage('projects')">
+            🚀 Projects
+        </button>
+
+        <button onclick="quickMessage('education')">
+            🎓 Education
+        </button>
+
+        <button onclick="quickMessage('github')">
+            🔗 GitHub
+        </button>
+
+    </div>
+
+
+    <!-- INPUT -->
+    <div class="input-box">
+
+        <input
+            id="input"
+            type="text"
+            placeholder="Ask me something..."
+            onkeydown="if(event.key==='Enter') sendMessage()"
+        >
+
+        <button onclick="sendMessage()">➤</button>
+
+    </div>
+
+</div>
+
+
+<script src="chatbot.js"></script>
+
+</body>
+</html>
