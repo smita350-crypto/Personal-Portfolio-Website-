@@ -400,3 +400,13 @@ footer {
         height: 270px;
     }
 }
+.chatbot-frame {
+    position: fixed;
+    right: 25px;
+    bottom: 90px;
+    width: 350px;
+    height: 500px;
+    border: none;
+    z-index: 999;
+    display: none;
+}
