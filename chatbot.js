@@ -1,52 +1,299 @@
 const input = document.getElementById("input");
 const messages = document.getElementById("messages");
 
-function send() {
+
+// SEND MESSAGE
+
+function sendMessage() {
 
     let text = input.value.trim();
 
     if (text === "") return;
 
-    messages.innerHTML += `
-        <div class="user">${text}</div>
-    `;
+    addMessage(text, "user");
 
     input.value = "";
 
+    showTyping();
+
     setTimeout(() => {
 
-        messages.innerHTML += `
-            <div class="bot">${reply(text.toLowerCase())}</div>
-        `;
+        removeTyping();
 
-        messages.scrollTop = messages.scrollHeight;
+        addMessage(
+            getReply(text.toLowerCase()),
+            "bot"
+        );
 
-    }, 500);
+    }, 700);
 }
 
-function reply(text) {
 
-    if (text.includes("skill"))
-        return "💻 HTML, CSS, JavaScript, PHP, Python and R Programming.";
+// ADD MESSAGE
 
-    if (text.includes("project"))
-        return "🚀 Smita has worked on Personal Portfolio, Hangman Game and BCA Study Hub.";
+function addMessage(text, type) {
 
-    if (text.includes("education") || text.includes("bca"))
-        return "🎓 Smita is currently pursuing BCA.";
+    const div = document.createElement("div");
 
-    if (text.includes("github"))
+    div.className = "message " + type;
+
+    div.innerHTML = text;
+
+    messages.appendChild(div);
+
+    messages.scrollTop =
+        messages.scrollHeight;
+}
+
+
+// QUICK BUTTON
+
+function quickMessage(text) {
+
+    input.value = text;
+
+    sendMessage();
+}
+
+
+// TYPING
+
+function showTyping() {
+
+    const typing = document.createElement("div");
+
+    typing.id = "typing";
+
+    typing.className = "message bot";
+
+    typing.innerHTML = "🤖 Typing...";
+
+    messages.appendChild(typing);
+
+    messages.scrollTop =
+        messages.scrollHeight;
+}
+
+
+function removeTyping() {
+
+    const typing =
+        document.getElementById("typing");
+
+    if (typing)
+        typing.remove();
+}
+
+
+// AI RESPONSES
+
+function getReply(text) {
+
+
+    /* HELLO */
+
+    if (
+        text.includes("hello") ||
+        text.includes("hi") ||
+        text.includes("hey")
+    ) {
+
         return `
-        🔗 <a href="https://github.com/smita350-crypto"
-        target="_blank">Visit Smita's GitHub</a>
+            👋 Hello!
+            <br><br>
+            I'm Smita's Portfolio Assistant.
+            <br>
+            What would you like to know?
         `;
 
-    if (text.includes("hello") || text.includes("hi"))
-        return "👋 Hello! Ask me about Skills, Projects, Education or GitHub.";
+    }
 
-    return "🤖 Try asking me about my skills, projects, education or GitHub.";
+
+    /* ABOUT */
+
+    if (
+        text.includes("who") ||
+        text.includes("about") ||
+        text.includes("smita")
+    ) {
+
+        return `
+            👩‍💻 <b>About Smita</b>
+            <br><br>
+            Smita Powar is a BCA student interested in
+            Web Development, UI/UX Design and Technology.
+            <br><br>
+            She enjoys learning programming and creating
+            creative digital projects.
+        `;
+
+    }
+
+
+    /* SKILLS */
+
+    if (
+        text.includes("skill") ||
+        text.includes("skills") ||
+        text.includes("technology")
+    ) {
+
+        return `
+            💻 <b>Smita's Skills</b>
+            <br><br>
+            🌐 HTML
+            <br>
+            🎨 CSS
+            <br>
+            ⚡ JavaScript
+            <br>
+            🐘 PHP
+            <br>
+            🐍 Python
+            <br>
+            📊 R Programming
+        `;
+
+    }
+
+
+    /* PROJECTS */
+
+    if (
+        text.includes("project") ||
+        text.includes("projects") ||
+        text.includes("work")
+    ) {
+
+        return `
+            🚀 <b>Smita's Projects</b>
+            <br><br>
+            💼 Personal Portfolio
+            <br>
+            🎮 Hangman Game
+            <br>
+            📚 BCA Study Hub
+        `;
+
+    }
+
+
+    /* EDUCATION */
+
+    if (
+        text.includes("education") ||
+        text.includes("study") ||
+        text.includes("college") ||
+        text.includes("bca")
+    ) {
+
+        return `
+            🎓 <b>Education</b>
+            <br><br>
+            Bachelor of Computer Applications (BCA)
+            <br><br>
+            Currently pursuing BCA with interest in
+            Web Development and UI/UX.
+        `;
+
+    }
+
+
+    /* GITHUB */
+
+    if (
+        text.includes("github") ||
+        text.includes("code") ||
+        text.includes("repository")
+    ) {
+
+        return `
+            🔗 <b>Smita's GitHub</b>
+            <br><br>
+            <a
+                href="https://github.com/smita350-crypto"
+                target="_blank"
+                style="color:#00c6ff"
+            >
+                Visit GitHub →
+            </a>
+        `;
+
+    }
+
+
+    /* CONTACT */
+
+    if (
+        text.includes("contact") ||
+        text.includes("email") ||
+        text.includes("reach")
+    ) {
+
+        return `
+            📧 <b>Contact Smita</b>
+            <br><br>
+            You can find the email address
+            in the Contact section of this portfolio.
+            <br><br>
+            🔗 GitHub:
+            <a
+                href="https://github.com/smita350-crypto"
+                target="_blank"
+                style="color:#00c6ff"
+            >
+                smita350-crypto
+            </a>
+        `;
+
+    }
+
+
+    /* THANK YOU */
+
+    if (
+        text.includes("thank") ||
+        text.includes("thanks")
+    ) {
+
+        return `
+            😊 You're welcome!
+            <br><br>
+            Feel free to explore Smita's portfolio 🚀
+        `;
+
+    }
+
+
+    /* DEFAULT */
+
+    return `
+        🤖 I'm still learning!
+        <br><br>
+
+        You can ask me:
+        <br>
+        💻 <b>What are her skills?</b>
+        <br>
+        🚀 <b>What are her projects?</b>
+        <br>
+        🎓 <b>What is her education?</b>
+        <br>
+        🔗 <b>What is her GitHub?</b>
+        <br>
+        👩‍💻 <b>Tell me about Smita</b>
+    `;
+
 }
+
+
+// CLOSE CHAT
 
 function closeChat() {
-    window.parent.postMessage("closeChat", "*");
+
+    window.parent.postMessage(
+        "closeChat",
+        "*"
+    );
+
 }
