@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Smita Powar | Portfolio</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <iframe
-    src="chatbot/chatbot.html"
-    class="chatbot-frame">
-</iframe>
 
-<div class="cursor-glow"></div>
+<!-- Animated background -->
+<div class="stars"></div>
 
+<!-- NAVBAR -->
 <header>
     <nav>
-        <h2>Smita.</h2>
+        <h2>Smita<span>.</span></h2>
 
         <div class="links">
             <a href="#home">Home</a>
@@ -28,221 +28,282 @@
             <a href="#contact">Contact</a>
         </div>
 
-        <button id="theme">🌙</button>
+        <button id="theme">☀️</button>
     </nav>
 </header>
 
 
 <!-- HOME -->
-
 <section id="home" class="hero">
 
     <div class="hero-text">
-        <p>Hello, I'm</p>
 
-        <h1>Smita Powar</h1>
+        <p class="hello">WELCOME TO MY PORTFOLIO</p>
+
+        <h1>Hi, I'm <span>Smita Powar</span></h1>
 
         <h2>
-            I'm a <span id="typing"></span>
+            <span id="typing"></span>
         </h2>
 
-        <p>
-            I love creating beautiful, simple and user-friendly
-            websites using modern web technologies.
+        <p class="intro">
+            A BCA student passionate about Web Development,
+            UI/UX Design and creative technology.
         </p>
 
-        <a href="#projects" class="btn">View My Work</a>
+        <div class="buttons">
+            <a href="#projects" class="btn">🚀 View My Projects</a>
+            <a href="#contact" class="btn second">Contact Me</a>
+        </div>
+
     </div>
 
-    <div class="profile">
-        <img src="IMG_20260511_174621.jpg" alt="Smita">
+
+    <div class="profile-area">
+
+        <div class="orbit orbit1"></div>
+        <div class="orbit orbit2"></div>
+
+        <div class="profile">
+            <img src="IMG_20260511_174621.jpg" alt="Smita Powar">
+        </div>
+
+        <div class="floating-icon icon1">💻</div>
+        <div class="floating-icon icon2">🎨</div>
+        <div class="floating-icon icon3">🐍</div>
+
     </div>
 
 </section>
 
 
 <!-- ABOUT -->
-
 <section id="about">
-    <h2 class="title">About Me</h2>
+
+    <h2 class="title">About <span>Me</span></h2>
 
     <div class="about-box reveal">
-        <p>
-            I am a BCA student interested in Web Development,
-            UI/UX Design and Technology.
-        </p>
 
-        <p>
-            I enjoy learning programming and creating creative
-            and useful projects.
-        </p>
+        <div>
+            <h3>👩‍💻 Who Am I?</h3>
+
+            <p>
+                I am Smita Powar, a BCA student interested in
+                Web Development, UI/UX Design and Technology.
+            </p>
+
+            <p>
+                I enjoy learning new programming skills and
+                creating creative, useful and user-friendly
+                digital experiences.
+            </p>
+        </div>
+
+        <div class="about-stats">
+
+            <div>
+                <b>🎓</b>
+                <strong>BCA</strong>
+                <small>Student</small>
+            </div>
+
+            <div>
+                <b>💻</b>
+                <strong>6+</strong>
+                <small>Skills</small>
+            </div>
+
+            <div>
+                <b>🚀</b>
+                <strong>3+</strong>
+                <small>Projects</small>
+            </div>
+
+        </div>
+
     </div>
+
 </section>
 
 
 <!-- SKILLS -->
-
 <section id="skills">
-    <h2 class="title">My Skills</h2>
+
+    <h2 class="title">My <span>Skills</span></h2>
 
     <div class="cards">
 
         <div class="card reveal">
-            <h3>🌐 HTML</h3>
-            <p>Creating structured web pages.</p>
+            <div class="skill-icon">🌐</div>
+            <h3>HTML</h3>
+            <p>Building structured and semantic web pages.</p>
+            <div class="bar"><i style="width:90%"></i></div>
+            <small>90%</small>
         </div>
 
         <div class="card reveal">
-            <h3>🎨 CSS</h3>
-            <p>Creating attractive responsive designs.</p>
+            <div class="skill-icon">🎨</div>
+            <h3>CSS</h3>
+            <p>Creating modern and responsive designs.</p>
+            <div class="bar"><i style="width:85%"></i></div>
+            <small>85%</small>
         </div>
 
         <div class="card reveal">
-            <h3>⚡ JavaScript</h3>
-            <p>Adding interactive features.</p>
+            <div class="skill-icon">⚡</div>
+            <h3>JavaScript</h3>
+            <p>Adding interaction and dynamic features.</p>
+            <div class="bar"><i style="width:75%"></i></div>
+            <small>75%</small>
         </div>
 
         <div class="card reveal">
-            <h3>🐘 PHP</h3>
-            <p>Building dynamic web applications.</p>
+            <div class="skill-icon">🐘</div>
+            <h3>PHP</h3>
+            <p>Developing dynamic web applications.</p>
+            <div class="bar"><i style="width:65%"></i></div>
+            <small>65%</small>
         </div>
 
         <div class="card reveal">
-            <h3>🐍 Python</h3>
+            <div class="skill-icon">🐍</div>
+            <h3>Python</h3>
             <p>Programming and application development.</p>
+            <div class="bar"><i style="width:75%"></i></div>
+            <small>75%</small>
         </div>
 
         <div class="card reveal">
-            <h3>📊 R Programming</h3>
+            <div class="skill-icon">📊</div>
+            <h3>R Programming</h3>
             <p>Data analysis and visualization.</p>
+            <div class="bar"><i style="width:65%"></i></div>
+            <small>65%</small>
         </div>
 
     </div>
+
 </section>
 
 
 <!-- PROJECTS -->
-
 <section id="projects">
-    <h2 class="title">My Projects</h2>
+
+    <h2 class="title">My <span>Projects</span></h2>
 
     <div class="cards">
 
-        <div class="card project reveal">
+        <div class="project-card reveal">
+            <div class="project-number">01</div>
             <h3>💼 Personal Portfolio</h3>
             <p>
-                A modern portfolio website to showcase my
-                skills, education and projects.
+                A modern personal portfolio website to showcase
+                my skills, education and projects.
             </p>
-            <span>HTML • CSS • JavaScript</span>
+            <div class="tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+            </div>
         </div>
 
-        <div class="card project reveal">
+        <div class="project-card reveal">
+            <div class="project-number">02</div>
             <h3>🎮 Hangman Game</h3>
             <p>
-                An interactive Hangman game created using Python.
+                An interactive Hangman game developed using
+                Python programming.
             </p>
-            <span>Python</span>
+            <div class="tags">
+                <span>Python</span>
+                <span>Game</span>
+            </div>
         </div>
 
-        <div class="card project reveal">
+        <div class="project-card reveal">
+            <div class="project-number">03</div>
             <h3>📚 BCA Study Hub</h3>
             <p>
-                A study website containing notes, programs
-                and question papers.
+                A useful study platform containing notes,
+                programs and question papers.
             </p>
-            <span>HTML • CSS • JavaScript</span>
+            <div class="tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JS</span>
+            </div>
         </div>
 
     </div>
+
 </section>
 
 
 <!-- EDUCATION -->
-
 <section id="education">
-    <h2 class="title">Education</h2>
 
-    <div class="education-box reveal">
-        <h3>🎓 Bachelor of Computer Applications (BCA)</h3>
-        <p>Currently pursuing BCA</p>
-        <p>Interested in Web Development & UI/UX</p>
-    </div>
-</section>
+    <h2 class="title">My <span>Education</span></h2>
 
+    <div class="timeline">
 
-<!-- CONTACT -->
+        <div class="timeline-item reveal">
+            <div class="dot"></div>
 
-<section id="contact">
-    <h2 class="title">Contact Me</h2>
-
-    <div class="contact-box reveal">
-
-        <!-- YOUR EMAIL -->
-       <p>
-    📧 Email:
-    <a href="mailto:smitapowar678@gmail.com">
-        smitapowar678@gmail.com
-    </a>
-</p>
-
-        <!-- YOUR GITHUB -->
-        <p>
-            🔗 GitHub:
-            <a href="https://github.com/smita350-crypto" target="_blank">
-                smita350-crypto
-            </a>
-        </p>
-
-        <p>📍 India</p>
-
-    </div>
-</section>
-
-
-<footer>
-    <p>© 2026 Smita Powar | Made with ❤️</p>
-</footer>
-
-
-<!-- 🤖 CHATBOT -->
-
-<div class="chatbot">
-
-    <div class="chat-header">
-        🤖 Smita AI Assistant
-        <button onclick="closeChat()">×</button>
-    </div>
-
-    <div id="chatMessages" class="chat-messages">
-
-        <div class="bot-message">
-            👋 Hi! I'm Smita's Portfolio Assistant.
-            <br><br>
-            Ask me about her skills, projects or education!
+            <div class="timeline-content">
+                <span>2026</span>
+                <h3>🎓 Bachelor of Computer Applications</h3>
+                <p>
+                    Currently pursuing BCA with interest in
+                    Web Development, UI/UX and Technology.
+                </p>
+            </div>
         </div>
 
     </div>
 
-    <div class="chat-input">
-        <input
-            type="text"
-            id="userInput"
-            placeholder="Ask something..."
-            onkeydown="if(event.key==='Enter') sendMessage()"
-        >
+</section>
 
-        <button onclick="sendMessage()">➤</button>
+
+<!-- CONTACT -->
+<section id="contact">
+
+    <h2 class="title">Let's <span>Connect</span></h2>
+
+    <div class="contact-box reveal">
+
+        <h3>Have a project or opportunity?</h3>
+
+        <p>
+            Feel free to connect with me.
+        </p>
+
+        <p>
+            📧
+            <a href="mailto:your-email@gmail.com">
+                your-email@gmail.com
+            </a>
+        </p>
+
+        <p>
+            🔗
+            <a href="https://github.com/smita350-crypto"
+               target="_blank">
+                github.com/smita350-crypto
+            </a>
+        </p>
+
     </div>
 
-</div>
+</section>
 
 
-<!-- CHATBOT BUTTON -->
+<footer>
+    <p>© 2026 Smita Powar | Built with 💙</p>
+</footer>
 
-<button class="ai-button" onclick="openChat()">
-    🤖
-</button>
+
+<!-- CHATBOT -->
+<!-- तुझ्या existing chatbot files असतील तर त्यांना आत्ता बदलू नको -->
 
 
 <script src="script.js"></script>
